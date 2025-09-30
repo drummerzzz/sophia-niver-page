@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Gift, Mail, Calendar, Heart } from "lucide-react";
 import farmHero from "@/assets/farm-hero.jpg";
 import sophia from "@/assets/sophia.png";
+import HiddenYouTubePlayer from "@/components/HiddenYouTubePlayer";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-sky">
       
       {/* Hero Section */}
+      <HiddenYouTubePlayer videoId="cjONzZPJONc" startTime={7} />
       <section className="relative overflow-hidden py-12 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="space-y-8">
