@@ -112,7 +112,9 @@ const Home = () => {
         {/* Guest Info */}
         <div className="space-y-4 bg-gradient-farm rounded-2xl p-6">
           <h1 className="text-4xl text-center font-bold text-foreground">
-            Convidados
+            Convidado{inviteData.convidados.length > 1  && (
+              <span>s</span>
+            )}
           </h1>
           
           <div className="space-y-3 text-left">
@@ -124,19 +126,6 @@ const Home = () => {
               )
             })}
             
-            {inviteData.telefone && (
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="font-fredoka text-sm">{inviteData.telefone}</span>
-              </div>
-            )}
-            
-            {inviteData.observacoes && (
-              <div className="mt-3 p-3 bg-white/30 rounded-lg">
-                <p className="font-fredoka text-sm font-semibold text-foreground mb-1">Observações:</p>
-                <p className="font-fredoka text-sm text-muted-foreground">{inviteData.observacoes}</p>
-              </div>
-            )}
           </div>
         </div>
 
