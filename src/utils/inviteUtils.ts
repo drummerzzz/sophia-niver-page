@@ -42,5 +42,5 @@ export const decodeInviteData = (encodedData: string): InviteData | null => {
 export const generateInviteUrl = (data: InviteData): string => {
   const encodedData = encodeInviteData(data);
   const baseUrl = window.location.origin;
-  return `${baseUrl}/invites/?data=${encodedData}`;
+  return `${baseUrl}/preview/?data=${encodedData}`;
 };

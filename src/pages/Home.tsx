@@ -28,7 +28,10 @@ const Home = () => {
                 <img 
                   src={sophia} 
                   alt="aniversariante" 
-                  className="w-64 h-auto animate-wiggle"
+                  className="w-auto h-64 md:h-96 animate-wiggle"
+                  style={{
+                    marginLeft: '-1rem'
+                  }}
                 />
               </div>
             </div>

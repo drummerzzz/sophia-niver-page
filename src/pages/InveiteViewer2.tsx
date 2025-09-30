@@ -8,14 +8,13 @@ import { InviteData, decodeInviteData, EVENT_INFO } from "@/utils/inviteUtils";
 import sophia from "@/assets/sophia.png";
 import CountdownTimer from "@/components/CountdownTimer";
 import NotFound from "./NotFound";
-import { Button } from "@/components/ui/button";
+import HiddenYouTubePlayer from "@/components/HiddenYouTubePlayer";
 
 
 const Home = () => {
   const [searchParams] = useSearchParams();
   const [inviteData, setInviteData] = useState<InviteData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [showInvite, setShowInvite] = useState(false);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
@@ -60,6 +59,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-sky">      
       {/* Hero Section */}
+      <HiddenYouTubePlayer videoId="cjONzZPJONc" startTime={7} />
       <section className="relative overflow-hidden py-4">
         <div className="container mx-auto px-4 text-center">
           <div className="space-y-8">
@@ -74,7 +74,10 @@ const Home = () => {
                 <img 
                   src={sophia} 
                   alt="aniversariante" 
-                  className="w-64 h-auto animate-wiggle"
+                  className="w-auto h-64 md:h-96 animate-wiggle"
+                  style={{
+                    marginLeft: '-1rem'
+                  }}
                 />
               </div>
             </div>
@@ -141,10 +144,7 @@ const Home = () => {
         <div className="max-w-2xl space-y-2 mx-auto text-center p-4">
           <div className="text-2xl">🌟🎉🌟</div>
           <p className="text-lg font-fredoka font-semibold text-primary">
-            Sua presença é o nosso presente!
-          </p>
-          <p className="text-sm font-fredoka text-muted-foreground">
-            Venha celebrar esse momento especial conosco! 💕
+            Contamos com você para esse momento especial! 💕
           </p>
         </div>
       </div>
