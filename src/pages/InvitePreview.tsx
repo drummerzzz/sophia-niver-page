@@ -40,7 +40,7 @@ const InvitePreview = () => {
         }`}
       >
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-primary animate-fade-in mb-3" style={{ fontFamily: 'Fredoka' }}>
+          <h1 className="text-4xl md:text-5xl font-bold text-primary animate-fade-in mb-3" style={{ fontFamily: 'Fredoka' }}>
             Você foi convidado! 🎉
           </h1>
           <p className="text-xl text-muted-foreground animate-fade-in">
@@ -49,7 +49,7 @@ const InvitePreview = () => {
         </div>
 
         {/* Envelope container */}
-        <div className="relative w-[500px] h-[340px] animate-wiggle">
+        <div className="relative w-auto h-[15rem] md:w-[31.25rem] md:h-[340px] animate-wiggle">
           {/* Envelope back/body */}
           <div 
             className="absolute inset-0 rounded-lg overflow-hidden"
