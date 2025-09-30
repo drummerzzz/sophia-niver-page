@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fazendinha Rosa Theme Design System */
+
+@layer base {
+  :root {
+    /* Fazendinha Rosa Color Palette */
+    --background: 345 50% 98%;
+    --foreground: 330 20% 25%;
+
+    --card: 345 40% 96%;
+    --card-foreground: 330 20% 25%;
+
+    --popover: 345 40% 96%;
+    --popover-foreground: 330 20% 25%;
+
+    /* Rosa principal da fazendinha */
+    --primary: 330 65% 75%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 340 50% 85%;
+    --primary-glow: 335 60% 80%;
+
+    /* Verde fazenda */
+    --secondary: 120 40% 85%;
+    --secondary-foreground: 120 30% 25%;
+    --farm-green: 110 45% 70%;
+    --farm-green-soft: 115 35% 85%;
+
+    /* Amarelo pastel fazenda */
+    --accent: 50 80% 85%;
+    --accent-foreground: 45 40% 25%;
+    --farm-yellow: 48 75% 80%;
+    --farm-yellow-soft: 52 60% 90%;
+
+    --muted: 345 30% 90%;
+    --muted-foreground: 330 15% 45%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 30% 85%;
+    --input: 340 25% 90%;
+    --ring: 330 65% 75%;
+
+    --radius: 1rem;
+
+    /* Gradients temáticos */
+    --gradient-farm: linear-gradient(135deg, hsl(var(--primary-soft)), hsl(var(--farm-yellow-soft)));
+    --gradient-sky: linear-gradient(180deg, hsl(50 80% 95%), hsl(200 60% 95%));
+    --gradient-field: linear-gradient(45deg, hsl(var(--farm-green-soft)), hsl(var(--farm-yellow-soft)));
+
+    /* Sombras suaves */
+    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    --shadow-farm: 0 8px 25px hsl(120 40% 70% / 0.2);
+
+    /* Animações */
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-soft: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-fredoka;
+    background: var(--gradient-sky);
+    min-height: 100vh;
+  }
+
+  /* Custom farm animations */
+  @keyframes bounce-soft {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--shadow-soft); }
+    50% { box-shadow: var(--shadow-glow); }
+  }
+
+  .animate-bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
