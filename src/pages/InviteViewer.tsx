@@ -9,12 +9,12 @@ import invitationBg from "@/assets/invitation-bg.jpg";
 import sophia from "@/assets/sophia.png";
 import CountdownTimer from "@/components/CountdownTimer";
 import NotFound from "./NotFound";
-import HiddenYouTubePlayer from "@/components/HiddenYouTubePlayer";
 
 const InviteViewer = () => {
   const [searchParams] = useSearchParams();
   const [inviteData, setInviteData] = useState<InviteData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showInvite, setShowInvite] = useState(false);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
@@ -41,11 +41,25 @@ const InviteViewer = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-sky">
-        <Navigation />
         <div className="container mx-auto px-4 py-16 text-center">
           <div className="space-y-4">
             <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto"></div>
             <p className="text-lg font-fredoka text-muted-foreground">Carregando convite...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+   if (!showInvite) {
+    return (
+      <div className="min-h-screen bg-gradient-sky">
+        <div className="container mx-auto px-4 py-16 text-center">
+          <div className="space-y-4">
+            <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto"></div>
+            <Button color="primary" onClick={()=> setShowInvite(true)}>
+              Ver convite
+            </Button>
           </div>
         </div>
       </div>
@@ -60,7 +74,6 @@ const InviteViewer = () => {
 
   return (
     <div className="min-h-screen bg-gradient-sky">
-      <HiddenYouTubePlayer videoId="cjONzZPJONc" startTime={7} />
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           {/* Invitation Card */}

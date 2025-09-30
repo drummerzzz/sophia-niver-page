@@ -1,20 +1,21 @@
 import { Gift, Mail, Calendar, Heart, Clock, MapPin, User, Phone } from "lucide-react";
 import farmHero from "@/assets/farm-hero.jpg";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
 import { InviteData, decodeInviteData, EVENT_INFO } from "@/utils/inviteUtils";
 import sophia from "@/assets/sophia.png";
 import CountdownTimer from "@/components/CountdownTimer";
 import NotFound from "./NotFound";
-import HiddenYouTubePlayer from "@/components/HiddenYouTubePlayer";
+import { Button } from "@/components/ui/button";
+
 
 const Home = () => {
   const [searchParams] = useSearchParams();
   const [inviteData, setInviteData] = useState<InviteData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showInvite, setShowInvite] = useState(false);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
@@ -41,7 +42,6 @@ const Home = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-sky">
-        <Navigation />
         <div className="container mx-auto px-4 py-16 text-center">
           <div className="space-y-4">
             <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto"></div>
@@ -58,10 +58,7 @@ const Home = () => {
     )
   }
   return (
-    <div className="min-h-screen bg-gradient-sky">
-      {/* Hidden YouTube Player for Background Audio */}
-      <HiddenYouTubePlayer videoId="cjONzZPJONc" startTime={7} />
-      
+    <div className="min-h-screen bg-gradient-sky">      
       {/* Hero Section */}
       <section className="relative overflow-hidden py-4">
         <div className="container mx-auto px-4 text-center">

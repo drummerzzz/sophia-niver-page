@@ -9,6 +9,7 @@ import InviteGenerator from "./pages/InviteGenerator";
 import InviteViewer2 from "./pages/InveiteViewer2";
 // import GiftSuggestions from "./pages/GiftSuggestions";
 import NotFound from "./pages/NotFound";
+import AudioPlayer from "./components/AudioPlayer";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <AudioPlayer src="/fazendinha.mp3" />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

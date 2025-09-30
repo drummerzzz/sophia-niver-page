@@ -2,18 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import CountdownTimer from "@/components/CountdownTimer";
 import Navigation from "@/components/Navigation";
-import HiddenYouTubePlayer from "@/components/HiddenYouTubePlayer";
 import { Link } from "react-router-dom";
 import { Gift, Mail, Calendar, Heart } from "lucide-react";
 import farmHero from "@/assets/farm-hero.jpg";
 import sophia from "@/assets/sophia.png";
 
+
 const Home = () => {
   const showButtons = false
   return (
     <div className="min-h-screen bg-gradient-sky">
-      {/* Hidden YouTube Player for Background Audio */}
-      <HiddenYouTubePlayer videoId="cjONzZPJONc" startTime={7} />
       
       {/* Hero Section */}
       <section className="relative overflow-hidden py-12 md:py-20">
