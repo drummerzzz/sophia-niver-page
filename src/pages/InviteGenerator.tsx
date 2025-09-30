@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Navigation from "@/components/Navigation";
-import { Mail, Copy, Share, CheckCircle } from "lucide-react";
+import { Mail, Copy, Share, CheckCircle, ArrowRightCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { InviteData, generateInviteUrl, EVENT_INFO } from "@/utils/inviteUtils";
 import pigMascot from "@/assets/pig-mascot.png";
@@ -204,9 +204,15 @@ const InviteGenerator = () => {
                     Copiar Link
                   </Button>
                   <Button onClick={shareInvite} variant="invite" className="flex-1">
-                    <Link to={generatedUrl} >
-                      Abrir
+                      Compartilhar
                       <Share className="w-4 h-4" />
+                  </Button>
+                </div>
+                <div className="flex gap-3">
+                  <Button  variant="invite" className="flex-1">
+                    <Link to={generatedUrl} target="_blank" >
+                        Abrir
+                        <ArrowRightCircle className="w-4 h-4" />
                     </Link>
                   </Button>
                 </div>
